@@ -105,6 +105,20 @@ module Chroma
         hsl.h = hue < 0 ? 360 + hue : hue
         self.class.new(hsl, @format)
       end
+
+      # Sets alpha component
+      #
+      # @example
+      #   'red'.paint.alphize(0.5) => rgba(255,0,0,0.5)
+      #
+      # @param amount [Alpha]
+      # @return       [Color]
+      def alphize(amount=1)
+        rgb = self.rgb
+        rgb.a = amount
+        self.class.new(rgb, :rgb)
+      end
+
     end
   end
 end

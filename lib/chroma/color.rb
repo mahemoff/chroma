@@ -57,7 +57,7 @@ module Chroma
     # @param other [Color]
     # @return      [true, false]
     def ==(other)
-      to_hex == other.to_hex
+      to_rgb == other.to_rgb
     end
 
     # Returns the complementary color.

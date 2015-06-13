@@ -84,4 +84,10 @@ describe Chroma::Color do
       expect(red.spin(60)).to eq yellow
     end
   end
+
+  describe '#alphize' do
+    it 'generates the correct color' do
+      expect(red.alphize(0.3)).to eq 'rgba(255,0,0,0.3)'.paint
+    end
+  end
 end
